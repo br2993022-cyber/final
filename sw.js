@@ -1,29 +1,40 @@
-const CACHE_NAME = "app-offline-v1";
-
-const URLS_TO_CACHE = [
-  "/app_off/",
-  "/app_off/index.html",
-  "/app_off/style.css",       // cambia a tu archivo real
-  "/app_off/script.js",       // cambia a tu archivo real
-  "/app_off/icons/icon-192.png",
-  "/app_off/icons/icon-512.png"
+const CACHE_NAME = "app-cache-v1";
+const FILES_TO_CACHE = [
+  "index.html",
+  "stiles.css",
+  "app.js",
+  "manifest.json",
+  "icon-192.png",
+  "icon-512.png"
 ];
 
-// INSTALACIÓN — guarda los archivos en caché
+// Instalar service worker
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(URLS_TO_CACHE);
+      return cache.addAll(FILES_TO_CACHE);
     })
   );
 });
 
-// INTERCEPTA REQUESTS — sirve desde cache si no hay internet
+// Activar SW
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.map((key) => {
+          if (key !== CACHE_NAME) return caches.delete(key);
+        })
+      );
+    })
+  );
+});
+
+// Interceptar peticiones
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request)
-      .then((cachedResponse) => {
-        return cachedResponse || fetch(event.request);
-      })
+      .then((response) => response || fetch(event.request))
   );
 });
+
