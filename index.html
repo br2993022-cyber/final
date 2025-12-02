@@ -18,6 +18,9 @@
         <button onclick="login()">Entrar</button>
 
         <p class="txt">¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate</a></p>
+
+        <!-- BOTÓN NUEVO -->
+        <button onclick="showUsers()" style="margin-top:10px;">Ver usuarios registrados</button>
     </div>
 
     <div class="card" id="registerCard" style="display:none;">
@@ -30,6 +33,19 @@
         <button onclick="register()">Registrar</button>
 
         <p class="txt"><a href="#" onclick="showLogin()">Volver al login</a></p>
+    </div>
+</div>
+
+<!-- MODAL PARA USUARIOS -->
+<div id="userModal" style="display:none;
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.6); padding-top:80px;">
+    
+    <div style="background:#fff; margin:auto; padding:20px; width:300px; border-radius:10px;">
+        <h3>Usuarios Registrados</h3>
+        <ul id="userList"></ul>
+
+        <button onclick="closeUsers()" style="margin-top:10px;">Cerrar</button>
     </div>
 </div>
 
