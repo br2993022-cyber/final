@@ -1,0 +1,168 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Servicios y notificaciones</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="logo">S3</div>
+    <div>
+      <h2 style="margin:0">3. Servicios y notificaciones en App</h2>
+      <div class="small">Tareas en segundo plano, notificaciones, sincronización y cómputo en la nube</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+
+        <!-- TAREAS EN SEGUNDO PLANO -->
+        <h3 class="section-title">Tareas en segundo plano</h3>
+
+        <p class="small">
+          Las tareas en segundo plano permiten que una aplicación siga ejecutando procesos aun cuando el usuario no la tiene abierta. 
+          Estas tareas son esenciales para sincronización de datos, servicios de ubicación, descargas, reproducción de música, notificaciones push, etc.
+        </p>
+
+        <h4 class="section-title">Tipos según plataforma</h4>
+        <div class="kv">
+          <div class="item"><b>Android Services</b> — procesos continuos en background</div>
+          <div class="item"><b>WorkManager</b> — tareas programadas (sincronización)</div>
+          <div class="item"><b>Foreground Services</b> — tareas largas con notificación visible</div>
+          <div class="item"><b>iOS Background Tasks</b> — ejecución limitada para IA, ubicación o descargas</div>
+          <div class="item"><b>Service Workers (Web/PWA)</b> — cache, sincronización, push</div>
+        </div>
+
+        <p class="small">
+          En aplicaciones web o PWAs, los <b>Service Workers</b> son la base para implementar tareas offline, push notifications y sincronización en segundo plano.
+        </p>
+
+        <p class="small">
+          Más info en MDN: 
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank">Service Worker API</a>
+        </p>
+
+
+
+        <!-- NOTIFICACIONES -->
+        <h3 class="section-title">Notificaciones Push</h3>
+
+        <p class="small">
+          Las notificaciones permiten comunicarse con el usuario incluso cuando la app está cerrada. En Android e iOS se usan servicios nativos 
+          (FCM y APNs). En la Web se combinan:
+        </p>
+
+        <ul class="small">
+          <li><b>Push API</b> — recibe mensajes desde un servidor.</li>
+          <li><b>Notifications API</b> — muestra alertas al usuario.</li>
+          <li><b>Service Worker</b> — escucha eventos push en background.</li>
+        </ul>
+
+        <p class="small">Guía completa: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" target="_blank">MDN Push API</a></p>
+
+        <h4 class="section-title">Plataformas más usadas</h4>
+        <div class="kv">
+          <div class="item"><b>Firebase Cloud Messaging (FCM)</b> — Android, iOS y Web</div>
+          <div class="item"><b>Apple Push Notification Service (APNs)</b> — iOS nativo</div>
+          <div class="item"><b>OneSignal</b> — Multi-plataforma, fácil integración</div>
+          <div class="item"><b>Expo Push Notifications</b> — apps con React Native</div>
+        </div>
+
+
+
+        <!-- PROCESO -->
+        <h3 class="section-title">Proceso profesional de implementación</h3>
+
+        <ol>
+          <li><b>Registrar un Service Worker</b> (PWA) o servicio nativo (Android/iOS).</li>
+          <li><b>Solicitar permisos de notificación</b> al usuario.</li>
+          <li><b>Obtener el token del dispositivo</b> (identificador único).</li>
+          <li><b>Enviar el token al servidor</b> para guardarlo.</li>
+          <li><b>Configurar proveedor</b> (FCM, APNs, OneSignal).</li>
+          <li><b>Recibir notificaciones en background</b> y manejar eventos.</li>
+          <li><b>Respuestas a acciones</b> (botones de “Aceptar”, “Abrir”, etc.).</li>
+        </ol>
+
+        <p class="small">
+          Las notificaciones pueden incluir imágenes, botones, acciones rápidas y deep links hacia pantallas específicas.
+        </p>
+
+
+
+        <!-- SERVICIOS EN LA NUBE -->
+        <h3 class="section-title">Servicios en la nube relacionados</h3>
+
+        <div class="kv">
+          <div class="item"><b>Firebase</b> — autenticación, base de datos, hosting, FCM</div>
+          <div class="item"><b>AWS Amplify / Lambda</b> — microservicios y funciones serverless</div>
+          <div class="item"><b>Azure Mobile Apps</b> — APIs, notificaciones y sincronización</div>
+          <div class="item"><b>Supabase</b> — base de datos, auth y real-time open-source</div>
+        </div>
+
+        <p class="small">
+          Los servicios en la nube permiten delegar tareas intensivas como procesamiento de datos, análisis de actividad, 
+          envío de notificaciones masivas o actualización de información en tiempo real.
+        </p>
+
+      </div>
+
+
+      <!-- EJEMPLO FLUJO -->
+      <div class="card" style="margin-top:12px">
+        <h3 class="section-title">Ejemplo: flujo de entrega de una notificación</h3>
+
+        <ol>
+          <li>La app obtiene el token del dispositivo y lo envía a un servidor.</li>
+          <li>El servidor solicita a <b>Firebase Cloud Messaging</b> enviar un mensaje.</li>
+          <li>FCM entrega el mensaje al dispositivo objetivo.</li>
+          <li>El sistema operativo muestra la notificación en la barra.</li>
+          <li>El usuario la toca → la app se abre y procesa la acción.</li>
+        </ol>
+
+        <img class="example" alt="noti" 
+             src="data:image/svg+xml;utf8,
+             <svg xmlns='http://www.w3.org/2000/svg' width='800' height='220'>
+             <rect rx='18' width='100%' height='100%' fill='%23071b2f'/>
+             <text x='20' y='60' fill='%23a7f0ee' font-size='30'>Push & Background Tasks</text>
+             <text x='20' y='120' fill='%23fff' font-size='20'>FCM → Dispositivo → Notificación → Acción</text>
+             </svg>">
+      </div>
+    </div>
+
+
+
+    
+    <aside>
+      <nav class="nav card" aria-label="Navegación principal">
+        <a href="pantalla2.html" data-page="pantalla2.html">2. Gestión de sensores</a>
+        <a href="pantalla3.html" data-page="pantalla3.html" class="active">3. Servicios y notificaciones</a>
+        <a href="pantalla4.html" data-page="pantalla4.html">4. Librerías y toolkits</a>
+        <a href="pantalla5.html" data-page="pantalla5.html">5. Depuración y seguridad</a>
+        <a href="pantalla6.html" data-page="pantalla6.html">6. Empaquetado y despliegue</a>
+        <a href="pantalla7.html" data-page="pantalla7.html">7. Canales y distribución</a>
+        <a href="index.html" data-page="index.html">Cerrar sesión</a>
+      </nav>
+
+      <div class="card" style="margin-top:12px">
+        <h4 class="section-title">Enlaces útiles</h4>
+        <ul class="small">
+          <li><a href="https://firebase.google.com/docs/cloud-messaging" target="_blank">Firebase Cloud Messaging</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" target="_blank">MDN Push API</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank">Service Worker API</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

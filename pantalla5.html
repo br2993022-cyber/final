@@ -1,0 +1,113 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Depuración y seguridad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="logo">S5</div>
+    <div>
+      <h2 class="title">5. Depuración y seguridad</h2>
+      <p class="subtitle">Herramientas, logs, refactorización y mecanismos de seguridad</p>
+    </div>
+  </header>
+
+  <!-- CUERPO PRINCIPAL -->
+  <main class="grid">
+
+    <!-- CONTENIDO -->
+    <section>
+      <article class="card">
+        
+        <!-- DEPURACIÓN -->
+        <h3 class="section-title">Herramientas de depuración</h3>
+        <ul class="list">
+          <li>Android Studio Profiler</li>
+          <li>Xcode Instruments</li>
+          <li>React Native Debugger / Flipper</li>
+          <li>Chrome DevTools (para PWAs)</li>
+        </ul>
+
+        <!-- LOGS -->
+        <h3 class="section-title">Uso de logs</h3>
+        <p class="small">
+          Utiliza niveles de registro (DEBUG, INFO, WARN, ERROR).  
+          Analiza stack traces, reproduce escenarios y monitorea en producción con:
+        </p>
+        <ul class="small">
+          <li>Firebase Crashlytics</li>
+          <li>Sentry</li>
+        </ul>
+
+        <!-- REFACTORIZACIÓN -->
+        <h3 class="section-title">Refactorización</h3>
+        <p class="small">
+          El proceso incluye identificar *code smells*, crear pruebas unitarias, aplicar cambios pequeños y revisar resultados.  
+          Se recomienda utilizar arquitecturas limpias como MVVM, Redux o Clean Architecture.
+        </p>
+
+        <!-- SEGURIDAD -->
+        <h3 class="section-title">Mecanismos de seguridad</h3>
+        <ul class="list">
+          <li>Solicitar solo permisos mínimos necesarios</li>
+          <li>No almacenar claves o secretos en el repositorio</li>
+          <li>Cifrar datos en tránsito (TLS) y en reposo cuando sea necesario</li>
+          <li>Autenticación segura (OAuth, OpenID Connect, Firebase Auth)</li>
+        </ul>
+
+        <p class="small">Consulta las guías OWASP para estándares de seguridad móvil.</p>
+        <p class="small">
+          <a href="https://owasp.org/www-project-mobile-app-security/" target="_blank">
+            OWASP Mobile Application Security
+          </a>
+        </p>
+
+      </article>
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside>
+
+      <!-- NAVEGACIÓN -->
+      <nav class="nav card" aria-label="Navegación principal">
+        <a href="pantalla2.html">2. Gestión de sensores</a>
+        <a href="pantalla3.html">3. Servicios y notificaciones</a>
+        <a href="pantalla4.html">4. Librerías y toolkits</a>
+        <a href="pantalla5.html" class="active">5. Depuración y seguridad</a>
+        <a href="pantalla6.html">6. Empaquetado y despliegue</a>
+        <a href="pantalla7.html">7. Canales y distribución</a>
+        <a href="index.html">Cerrar sesión</a>
+      </nav>
+
+      <!-- RECURSOS -->
+      <div class="card mt-12">
+        <h4 class="section-title">Recursos</h4>
+        <ul class="small">
+          <li>Crashlytics</li>
+          <li>Sentry</li>
+          <li>Android Studio & Xcode</li>
+          <li>
+            <a href="https://owasp.org/www-project-mobile-app-security/" target="_blank">
+              OWASP MAS
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+  </main>
+
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

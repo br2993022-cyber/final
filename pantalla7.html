@@ -1,0 +1,171 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Plataformas y canales de distribución</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="logo">S7</div>
+    <div>
+      <h2 class="title">7. Plataformas y canales de distribución</h2>
+      <p class="subtitle">Tiendas oficiales, políticas de publicación y tipos de pruebas</p>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="grid">
+
+    <section>
+      <!-- CARD PRINCIPAL -->
+      <article class="card">
+
+        <!-- PLATAFORMAS -->
+        <h3 class="section-title">Plataformas y canales de distribución</h3>
+        <p class="small">
+          Las aplicaciones móviles pueden distribuirse en múltiples plataformas, cada una con políticas específicas de
+          contenido, seguridad, privacidad y requisitos técnicos de empaquetado y firma.
+        </p>
+
+        <ul class="list small">
+          <li><strong>Google Play Store</strong> — Principal tienda Android. Requiere AAB, políticas estrictas y revisiones automáticas.</li>
+          <li><strong>Apple App Store</strong> — Distribución oficial iOS. Requiere IPA firmado con certificados Apple.</li>
+          <li><strong>Microsoft Store</strong> — Para apps Windows, PWAs y algunas apps Android en versiones recientes.</li>
+          <li><strong>Distribución interna / empresarial</strong> — Para organizaciones, usando MDM (Mobile Device Management).</li>
+          <li><strong>Repositorios alternativos</strong> — Ej: Huawei AppGallery, Samsung Galaxy Store, Amazon Appstore.</li>
+          <li><strong>Instalación directa</strong> — APK fuera de tienda (limitada y con riesgos de seguridad).</li>
+        </ul>
+
+        <!-- TIPOS DE PRUEBAS -->
+        <h3 class="section-title">Tipos de pruebas antes de la publicación</h3>
+        <ul class="list small">
+          <li><strong>Pruebas internas:</strong> se usan para equipos de desarrollo o QA. Rápidas, sin revisión.</li>
+          <li><strong>Pruebas cerradas (Beta privada):</strong> grupos controlados para obtener feedback detallado.</li>
+          <li><strong>Pruebas abiertas (Open Beta):</strong> disponibles para cualquier usuario interesado antes del lanzamiento final.</li>
+        </ul>
+
+        <!-- ESCENARIOS DE USO -->
+        <h3 class="section-title">Escenarios de uso recomendados</h3>
+        <p class="small">
+          Elegir el canal adecuado depende del objetivo:
+        </p>
+        <ul class="list small">
+          <li><strong>Interno:</strong> validar funciones rápidamente durante el desarrollo.</li>
+          <li><strong>Cerrado:</strong> probar rendimiento, bugs y usabilidad con un grupo confiable.</li>
+          <li><strong>Abierto:</strong> evaluar comportamiento a gran escala, marketing inicial y compatibilidad.</li>
+        </ul>
+
+      </article>
+
+      <!-- POLÍTICAS -->
+      <article class="card mt-12">
+        <h3 class="section-title">Políticas y requisitos de publicación</h3>
+        <p class="small">
+          Antes de publicar una app, es necesario cumplir con las políticas oficiales de cada tienda:
+        </p>
+        <ul class="list small">
+          <li>Privacidad, permisos y acceso a sensores.</li>
+          <li>Contenido permitido y restricciones por país.</li>
+          <li>Revisión de anuncios y métodos de monetización.</li>
+          <li>Cumplimiento de seguridad (TLS, almacenamiento seguro, protección de datos).</li>
+        </ul>
+        <p class="small">
+          Ignorar estas políticas puede causar rechazos repetidos o incluso la eliminación de la app.
+        </p>
+      </article>
+    </section>
+
+    <!-- BARRA LATERAL -->
+    <aside>
+
+      <!-- NAVEGACIÓN -->
+      <nav class="nav card">
+        <a href="pantalla2.html">2. Gestión de sensores</a>
+        <a href="pantalla3.html">3. Servicios y notificaciones</a>
+        <a href="pantalla4.html">4. Librerías y toolkits</a>
+        <a href="pantalla5.html">5. Depuración y seguridad</a>
+        <a href="pantalla6.html">6. Empaquetado y despliegue</a>
+        <a href="pantalla7.html" class="active">7. Canales y distribución</a>
+        <a href="index.html">Cerrar sesión</a>
+      </nav>
+
+      <!-- REFERENCIAS -->
+      <div class="card" style="margin-top:12px">
+  <h4 class="section-title">Referencias rápidas</h4>
+
+  <div class="card">
+    <ol class="small">
+      <li>
+        Android – Sensors overview. 
+        <a href="https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview" target="_blank">
+          https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview
+        </a>
+      </li>
+
+      <li>
+        MDN – Push API. 
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API" target="_blank">
+          https://developer.mozilla.org/en-US/docs/Web/API/Push_API
+        </a>
+      </li>
+
+      <li>
+        React Native docs. 
+        <a href="https://reactnative.dev/docs/getting-started" target="_blank">
+          https://reactnative.dev/docs/getting-started
+        </a>
+      </li>
+
+      <li>
+        Flutter docs. 
+        <a href="https://flutter.dev/" target="_blank">
+          https://flutter.dev/
+        </a>
+      </li>
+
+      <li>
+        Firebase Cloud Messaging. 
+        <a href="https://firebase.google.com/docs/cloud-messaging" target="_blank">
+          https://firebase.google.com/docs/cloud-messaging
+        </a>
+      </li>
+
+      <li>
+        Service Worker API (MDN). 
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank">
+          https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+        </a>
+      </li>
+
+      <li>
+        OWASP Mobile Application Security. 
+        <a href="https://owasp.org/www-project-mobile-app-security/" target="_blank">
+          https://owasp.org/www-project-mobile-app-security/
+        </a>
+      </li>
+    </ol>
+  </div>
+
+</div>
+
+    </aside>
+
+  </main>
+
+  <!-- PIE -->
+  <footer class="footer small">
+    Incluye tiendas oficiales, canales alternos y mejores prácticas de pruebas.
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

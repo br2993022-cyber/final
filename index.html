@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Local</title>
+    <link rel="stylesheet" href="stiles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>Iniciar sesión</h2>
+
+        <input type="email" id="loginEmail" placeholder="Correo electrónico">
+        <input type="password" id="loginPass" placeholder="Contraseña">
+
+        <button onclick="login()">Entrar</button>
+
+        <p class="txt">¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate</a></p>
+    </div>
+
+    <div class="card" id="registerCard" style="display:none;">
+        <h2>Registrar usuario</h2>
+
+        <input type="text" id="regName" placeholder="Nombre">
+        <input type="email" id="regEmail" placeholder="Correo electrónico">
+        <input type="password" id="regPass" placeholder="Contraseña">
+
+        <button onclick="register()">Registrar</button>
+
+        <p class="txt"><a href="#" onclick="showLogin()">Volver al login</a></p>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
