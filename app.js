@@ -52,3 +52,27 @@ function login() {
     alert("Correo o contraseña incorrectos");
 }
 }
+// Mostrar modal con usuarios
+function showUsers() {
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let list = document.getElementById("userList");
+
+    list.innerHTML = ""; // limpiar
+
+    if (users.length === 0) {
+        list.innerHTML = "<li>No hay usuarios registrados</li>";
+    } else {
+        users.forEach(u => {
+            let li = document.createElement("li");
+            li.textContent = `${u.name} - ${u.email}`;
+            list.appendChild(li);
+        });
+    }
+
+    document.getElementById("userModal").style.display = "block";
+}
+
+// Cerrar modal
+function closeUsers() {
+    document.getElementById("userModal").style.display = "none";
+}
